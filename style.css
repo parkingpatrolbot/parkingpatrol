@@ -1,0 +1,106 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: #1a5fb4;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  background: white;
+  margin: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.qr-box img {
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
+  border: 3px solid #1a5fb4;
+  border-radius: 12px;
+}
+
+.qr-box p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+.qr-box a {
+  color: #1a5fb4;
+  font-weight: 500;
+}
+
+button {
+  background: #1a5fb4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+h2 {
+  margin: 30px 0 15px;
+  color: #1a5fb4;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+ol, ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #333;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #1a5fb4;
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 2rem; }
+  .qr-box img { width: 160px; height: 160px; }
+}

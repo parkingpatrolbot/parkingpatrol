@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ParkingPatrol — Бот за пријаву неправилног паркирања</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>ParkingPatrol</h1>
+      <p>Бот за пријаву неправилног паркирања — брзо, једноставно, законито.</p>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <div class="qr-box">
+      <img src="qr-code.png" alt="QR код за бота" id="qr-img"/>
+      <p>Скенирај QR или <a href="https://t.me/ParkingPatrolBot" target="_blank">кликни овде</a></p>
+      <button onclick="copyLink()">Копирај линк</button>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Како ради?</h2>
+    <ol>
+      <li>Пошаљи фото са телефона</li>
+      <li>Изабери тип прекршаја</li>
+      <li>Бот формира службено писмо са EXIF, GPS и PDF-ом</li>
+      <li>Писмо се шаље Комуналној Милицији или Паркинг Сервису</li>
+    </ol>
+  </section>
+
+  <section class="container">
+    <h2>Техничка документација</h2>
+    <ul>
+      <li>EXIF извлачење (датум, време, координате)</li>
+      <li>PDF генерација са QR-ом и потписом</li>
+      <li>HTML + plain-text писмо</li>
+      <li>Верификација корисника преко Telegram контакта</li>
+      <li>Ограничење 1 жалбе/дан по кориснику</li>
+      <li>Чување података 30 дана (анонимизација)</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 ParkingPatrol | <a href="https://t.me/ParkingPatrolBot">t.me/ParkingPatrolBot</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function copyLink() {
+      navigator.clipboard.writeText('https://t.me/ParkingPatrolBot');
+      alert('Линк је копиран у клипборд!');
+    }
+  </script>
+</body>
+</html>
