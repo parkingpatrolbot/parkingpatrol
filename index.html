@@ -15,15 +15,16 @@
     </div>
   </header>
 
-  <section class="hero container">
+    <!-- QR ПО ЦЕНТРУ -->
+  <section class="hero">
     <div class="qr-box">
-      <img src="qr-code.png" alt="QR код за бота" id="qr-img"/>
-      <p>Скенирај QR или <a href="https://t.me/ParkingPatrolBot" target="_blank">кликни овде</a></p>
-      <button onclick="copyLink()">Копирај линк</button>
+      <img src="qr-code.png" alt="QR код" />
+      <p>Отсканируйте QR-код или <a href="https://t.me/ParkingPatrolBot" target="_blank">нажмите здесь</a></p>
+      <button onclick="copyLink()">Копировать ссылку</button>
     </div>
   </section>
 
-    <!-- НОВЫЙ БЛОК: КАК РАБОТАЕТ -->
+     <!-- КАРТОЧКИ: КАК РАБОТАЕТ -->
   <section class="how-it-works">
     <div class="container">
       <h2>🌐 Как работает ParkingPatrol</h2>
@@ -80,7 +81,7 @@
           <img src="image6.jpeg" alt="Предпросмотр" class="step-img">
           <div class="step-icon">👁️</div>
           <h3>Предпросмотр</h3>
-          <p><strong>Проверьте обращение</strong><br>Перед отправкой вы видите весь текст жалобы, приложенные фото и данные заявителя — всё прозрачно.</p>
+          <p><strong>Проверьте обращение</strong><br>Перед отправкой вы видите весь текст жалбы, приложенные фото и данные заявителя — всё прозрачно.</p>
         </div>
 
         <!-- ШАГ 7 (ДВА СКРИНА) -->
@@ -97,19 +98,6 @@
 
       </div>
     </div>
-  </section>
-  <!-- КОНЕЦ НОВОГО БЛОКА -->
-
-  <section class="container">
-    <h2>Техничка документација</h2>
-    <ul>
-      <li>EXIF извлачење (датум, време, координате)</li>
-      <li>PDF генерација са QR-ом и потписом</li>
-      <li>HTML + plain-text писмо</li>
-      <li>Верификација корисника преко Telegram контакта</li>
-      <li>Ограничење 1 жалбе/дан по кориснику</li>
-      <li>Чување података 30 дана (анонимизација)</li>
-    </ul>
   </section>
 
   <footer>
@@ -128,15 +116,13 @@
     const cards = document.querySelectorAll('.step-card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
-  
     cards.forEach(card => observer.observe(card));
 </script>
 </body>
 
 </html>
+
 
