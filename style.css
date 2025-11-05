@@ -7,7 +7,7 @@ header { background: #1a5fb4; color: white; text-align: center; padding: 50px 20
 header h1 { font-size: 2.5rem; margin-bottom: 10px; }
 header p { font-size: 1.2rem; }
 
-/* === QR ПО ЦЕНТРУ === */
+/* === QR === */
 .hero { display: flex; justify-content: center; padding: 40px 20px; }
 .qr-box { text-align: center; max-width: 400px; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
 .qr-box img { width: 200px; height: 200px; margin: 20px auto; border: 4px solid #1a5fb4; border-radius: 12px; }
@@ -34,25 +34,19 @@ header p { font-size: 1.2rem; }
 /* === ЮРИДИЧЕСКИЕ БЛОКИ === */
 .legal { padding: 60px 0; background: #f8f9fa; }
 .legal h2 { text-align: center; margin-bottom: 30px; color: #1a5fb4; }
-.legal-content { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
-.legal-content ul { margin: 20px 0; padding-left: 20px; }
-.legal-content li { margin: 8px 0; }
-.legal-content code { background: #e5e7eb; padding: 2px 6px; border-radius: 4px; }
+.collapsible { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+.toggle-text { display: block; margin: 15px 0; }
+.toggle-btn { background: none; border: none; color: #1a5fb4; font-weight: 600; cursor: pointer; text-decoration: underline; }
+.full-text { display: none; margin-top: 20px; line-height: 1.7; }
+.full-text a { color: #1a5fb4; }
 
-/* === ПОДДЕРЖКА === */
+/* === ФОРМА ОБРАТНОЙ СВЯЗИ === */
 .feedback { padding: 60px 0; text-align: center; background: #f0f9ff; }
-.feedback h2 { margin-bottom: 20px; color: #1a5fb4; }
-.btn-feedback {
-  display: inline-block;
-  background: #25d366;
-  color: white;
-  padding: 14px 32px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(37,211,102,0.3);
-}
-.btn-feedback:hover { background: #1da851; }
+.feedback h2 { margin-bottom: 30px; color: #1a5fb4; }
+.feedback form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+.feedback input, .feedback textarea { padding: 12px; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 1rem; }
+.feedback button { background: #1a5fb4; color: white; border: none; padding: 14px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.feedback button:hover { background: #0d47a1; }
 
 /* === ФУТЕР === */
 footer { text-align: center; padding: 30px; background: #1a202c; color: #e2e8f0; }
@@ -65,3 +59,4 @@ footer a { color: #63b3ed; }
   .step-card.wide { grid-column: span 1; }
   .step-dual .step-img { width: 100%; max-width: 300px; }
 }
+
