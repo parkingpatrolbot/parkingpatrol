@@ -105,16 +105,13 @@
   <section id="terms" class="legal">
     <div class="container">
       <h2>Условия использования</h2>
-      <p>Полный текст: <a href="terms.docx" target="_blank">terms.docx</a></p>
-      <div class="legal-content">
-        <p>Начиная использование Сервиса, вы подтверждаете, что ознакомились с <a href="terms.docx" target="_blank">Условиями</a> и принимаете их в полном объёме.</p>
-        <p>Кратко:</p>
-        <ul>
-          <li>Сервис — только посредник</li>
-          <li>Не более 3 жалоб в сутки</li>
-          <li>Запрещены фейки и оскорбления</li>
-          <li>Мы не отвечаем за действия служб</li>
-        </ul>
+      <div class="collapsible">
+        <p>Начиная использование Сервиса, вы подтверждаете, что ознакомились с <a href="terms.docx" target="_blank">полным текстом</a> и принимаете его. <span class="toggle-text">Кратко: Сервис — только посредник. Не более 3 жалоб в сутки. Запрещены фейки. Мы не отвечаем за действия служб.</span></p>
+        <button class="toggle-btn">Читать полностью</button>
+        <div class="full-text">
+          <p><strong>1. Общие положения</strong><br>1.1. Настоящие Условия регулируют использование бота и сайта ParkingPatrol. 1.2. Используя Сервис, вы принимаете Условия в полном объёме...</p>
+          <p><a href="terms.docx" target="_blank">Скачать полный документ</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -123,28 +120,27 @@
   <section id="privacy" class="legal">
     <div class="container">
       <h2>Политика конфиденциальности</h2>
-      <p>Полный текст: <a href="privacy.docx" target="_blank">privacy.docx</a></p>
-      <div class="legal-content">
-        <p>Мы храним данные <strong>не более 30 дней</strong> и удаляем автоматически.</p>
-        <p>Кратко:</p>
-        <ul>
-          <li>Фото + EXIF — только для жалобы</li>
-          <li>Контакты — только если вы указали</li>
-          <li>Нет рекламы, нет cookies</li>
-          <li>Удалить данные: команда <code>/delete</code></li>
-        </ul>
+      <div class="collapsible">
+        <p>Мы храним данные <strong>не более 30 дней</strong> и удаляем автоматически. <span class="toggle-text">Кратко: Фото + EXIF — только для жалобы. Контакты — по вашему выбору. Нет рекламы. Удалить: /delete.</span></p>
+        <button class="toggle-btn">Читать полностью</button>
+        <div class="full-text">
+          <p><strong>1. Общие положения</strong><br>1.1. Политика описывает, какие данные собирает Сервис... 1.2. Используя Сервис, вы соглашаетесь...</p>
+          <p><a href="privacy.docx" target="_blank">Скачать полный документ</a></p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ПОДДЕРЖКА -->
+  <!-- ОБРАТНАЯ СВЯЗЬ — ФОРМА НА EMAIL -->
   <section class="feedback">
     <div class="container">
       <h2>Обратная связь</h2>
-      <p>Есть вопрос? Напишите в Telegram!</p>
-      <a href="https://t.me/ParkingPatrolBot" target="_blank" class="btn-feedback">
-        Написать в поддержку
-      </a>
+      <form action="https://formspree.io/f/ВАШ_ID" method="POST">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон (Telegram)" required>
+        <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
     </div>
   </section>
 
@@ -164,6 +160,16 @@
       alert('Ссылка скопирована!');
     }
 
+    // Раскрытие текста
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const full = btn.nextElementSibling;
+        full.style.display = full.style.display === 'block' ? 'none' : 'block';
+        btn.textContent = full.style.display === 'block' ? 'Свернуть' : 'Читать полностью';
+      });
+    });
+
+    // Анимация карточек
     const cards = document.querySelectorAll('.step-card');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
