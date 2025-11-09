@@ -40,7 +40,7 @@ header p { font-size: 1.2rem; }
 .full-text { display: none; margin-top: 20px; line-height: 1.7; }
 .full-text a { color: #1a5fb4; }
 
-/* === ФОРМА ОБРАТНОЙ СВЯЗИ === */
+/* === ОБРАТНАЯ СВЯЗЬ — ФОРМА === */
 .feedback { padding: 60px 0; text-align: center; background: #f0f9ff; }
 .feedback h2 { margin-bottom: 30px; color: #1a5fb4; }
 .feedback form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
@@ -59,4 +59,5 @@ footer a { color: #63b3ed; }
   .step-card.wide { grid-column: span 1; }
   .step-dual .step-img { width: 100%; max-width: 300px; }
 }
+
 
