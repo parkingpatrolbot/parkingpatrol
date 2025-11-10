@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+﻿* { margin: 0; padding: 0; box-sizing: border-box; }
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #2d3748; background: #f8f9fa; }
 
@@ -58,6 +58,32 @@ footer a { color: #63b3ed; }
   .qr-box img { width: 160px; height: 160px; }
   .step-card.wide { grid-column: span 1; }
   .step-dual .step-img { width: 100%; max-width: 300px; }
+}
+
+/* === ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ === */
+#lang-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+}
+.lang-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lang-btn:hover { background: rgba(255,255,255,0.3); }
+.lang-btn.active {
+  background: white;
+  color: #1a5fb4;
+  font-weight: 600;
 }
 
 

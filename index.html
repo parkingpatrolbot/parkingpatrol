@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ParkingPatrol — Бот для жалоб на парковку</title>
+  <title data-i18n="title">ParkingPatrol — Бот для жалоб на парковку</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
@@ -12,12 +12,16 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- i18n скрипт -->
+  <script src="js/i18n.js" defer></script>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>ParkingPatrol</h1>
-      <p>Бот для жалоб на нарушения парковки — быстро, просто, законно.</p>
+      <h1 data-i18n="header_h1">ParkingPatrol</h1>
+      <p data-i18n="header_p">Бот для жалоб на нарушения парковки — быстро, просто, законно.</p>
+      <div id="lang-switcher"></div>
     </div>
   </header>
 
@@ -25,81 +29,81 @@
   <section class="hero">
     <div class="qr-box">
       <img src="qr-code.png" alt="QR код" />
-      <p>Отсканируйте QR-код или <a href="https://t.me/ParkingPatrolBot" target="_blank">нажмите здесь</a></p>
-      <button onclick="copyLink()">Копировать ссылку</button>
+      <p data-i18n="qr_text">Отсканируйте QR-код или <a href="https://t.me/ParkingPatrolBot" target="_blank">нажмите здесь</a></p>
+      <button data-i18n="qr_button" onclick="copyLink()">Копировать ссылку</button>
     </div>
   </section>
 
   <!-- КАРТОЧКИ: КАК РАБОТАЕТ -->
   <section class="how-it-works">
     <div class="container">
-      <h2>🌐 Как работает ParkingPatrol</h2>
+      <h2 data-i18n="how_title">🌐 Как работает ParkingPatrol</h2>
       <div class="steps-grid">
 
         <!-- ШАГ 1 -->
         <div class="step-card">
           <div class="step-number">#1</div>
-          <img src="1-ru.jpg" alt="Приветствие" class="step-img">
+          <img data-img data-img-ru="img/1-ru.jpg" data-img-sr="img/1-sr.jpg" data-img-en="img/1-en.jpg" src="img/1-ru.jpg" alt="Step 1" class="step-img">
           <div class="step-icon">📸</div>
-          <h3>Привет</h3>
-          <p><strong>Начало работы</strong><br>Бот приветствует вас и напоминает, как сделать фото с геолокацией. Нажмите кнопку «Жалоба», чтобы начать процесс.</p>
+          <h3 data-i18n="step1_title">Привет</h3>
+          <p><strong data-i18n="step1_sub">Начало работы</strong><br><span data-i18n="step1_desc">Бот приветствует вас и напоминает, как сделать фото с геолокацией...</span></p>
         </div>
 
         <!-- ШАГ 2 -->
         <div class="step-card">
           <div class="step-number">#2</div>
-          <img src="2-ru.jpg" alt="Отправка фотографии" class="step-img">
+          <img data-img data-img-ru="img/2-ru.jpg" data-img-sr="img/2-sr.jpg" data-img-en="img/2-en.jpg" src="img/2-ru.jpg" alt="Step 2" class="step-img">
           <div class="step-icon">📷</div>
-          <h3>Отправка фотографии</h3>
-          <p><strong>Добавить фотографию</strong><br>Прикрепите фото автомобиля-нарушителя как файл — это позволит извлечь из него дату, время и координаты места правонарушения.</p>
+          <h3 data-i18n="step2_title">Отправка фотографии</h3>
+          <p><strong data-i18n="step2_sub">Добавить фотографию</strong><br><span data-i18n="step2_desc">Прикрепите фото автомобиля-нарушителя как файл...</span></p>
         </div>
 
         <!-- ШАГ 3 -->
         <div class="step-card">
           <div class="step-number">#3</div>
-          <img src="3-ru.jpg" alt="Карта" class="step-img">
+          <img data-img data-img-ru="img/3-ru.jpg" data-img-sr="img/3-sr.jpg" data-img-en="img/3-en.jpg" src="img/3-ru.jpg" alt="Step 3" class="step-img">
           <div class="step-icon">🗺️</div>
-          <h3>Карта</h3>
-          <p><strong>Проверьте место</strong><br>Бот автоматически покажет карту по извлеченным геоданным. Подтвердите адрес или уточните его вручную, если нужно.</p>
+          <h3 data-i18n="step3_title">Карта</h3>
+          <p><strong data-i18n="step3_sub">Проверьте место</strong><br><span data-i18n="step3_desc">Бот автоматически покажет карту...</span></p>
         </div>
 
         <!-- ШАГ 4 -->
         <div class="step-card">
           <div class="step-number">#4</div>
-          <img src="4-ru.jpg" alt="Контакты" class="step-img">
+          <img data-img data-img-ru="img/4-ru.jpg" data-img-sr="img/4-sr.jpg" data-img-en="img/4-en.jpg" src="img/4-ru.jpg" alt="Step 4" class="step-img">
           <div class="step-icon">👤</div>
-          <h3>Контакты</h3>
-          <p><strong>Выберите способ подачи жалобы</strong><br>Отправьте жалобу анонимно или с контактами. Если вы подтверждаете номер телефона, он будет отмечен как верифицированный.</p>
+          <h3 data-i18n="step4_title">Контакты</h3>
+          <p><strong data-i18n="step4_sub">Выберите способ подачи жалобы</strong><br><span data-i18n="step4_desc">Отправьте жалобу анонимно или с контактами...</span></p>
         </div>
 
         <!-- ШАГ 5 -->
         <div class="step-card">
           <div class="step-number">#5</div>
-          <img src="5-ru.jpg" alt="Тип нарушения" class="step-img">
+          <img data-img data-img-ru="img/5-ru.jpg" data-img-sr="img/5-sr.jpg" data-img-en="img/5-en.jpg" src="img/5-ru.jpg" alt="Step 5" class="step-img">
           <div class="step-icon">⚙️</div>
-          <h3>Тип нарушения</h3>
-          <p><strong>Укажите тип нарушения</strong><br>Выберите, что произошло: парковка без оплаты, на тротуаре, газоне и т.д. Бот сам определит, в какую службу направить жалобу.</p>
+          <h3 data-i18n="step5_title">Тип нарушения</h3>
+          <p><strong data-i18n="step5_sub">Укажите тип нарушения</strong><br><span data-i18n="step5_desc">Выберите, что произошло...</span></p>
         </div>
 
         <!-- ШАГ 6 -->
         <div class="step-card">
           <div class="step-number">#6</div>
-          <img src="6-ru.jpg" alt="Предварительный просмотр" class="step-img">
+          <img data-img data-img-ru="img/6-ru.jpg" data-img-sr="img/6-sr.jpg" data-img-en="img/6-en.jpg" src="img/6-ru.jpg" alt="Step 6" class="step-img">
           <div class="step-icon">👁️</div>
-          <h3>Предварительный просмотр</h3>
-          <p><strong>Проверьте заявление</strong><br>Перед отправкой вы видите весь текст жалобы, извлеченные из фото дату, время и координаты, данные заявителя и т.д. — всё прозрачно.</p>
+          <h3 data-i18n="step6_title">Предварительный просмотр</h3>
+          <p><strong data-i18n="step6_sub">Проверьте заявление</strong><br><span data-i18n="step6_desc">Перед отправкой вы видите весь текст...</span></p>
         </div>
 
         <!-- ШАГ 7 (ШИРОКИЙ) -->
         <div class="step-card wide">
           <div class="step-number">#7</div>
           <div class="step-dual">
-            <img src="7-ru.jpg" alt="HTML-письмо" class="step-img">
-            <img src="8-ru.jpg" alt="PDF-документ" class="step-img">
+            <img data-img data-img-ru="img/7-ru.jpg" data-img-sr="img/7-sr.jpg" data-img-en="img/7-en.jpg" src="img/7-ru.jpg" alt="HTML-письмо" class="step-img">
+            <img data-img data-img-ru="img/8-ru.jpg" data-img-sr="img/8-sr.jpg" data-img-en="img/8-en.jpg" src="img/8-ru.jpg" alt="PDF-документ" class="step-img">
           </div>
           <div class="step-icon">✅</div>
-          <h3>Отправка</h3>
-          <p><strong>Жалоба отправлена!</strong><br>Нажмите «Отправить» — бот сформирует HTML-письмо и PDF-документ и направит их в соответствующую службу.</p>
+          <h3 data-i18n="step7_title">Отправка</h3>
+          <p><strong data-i18n="step7_sub">Жалоба отправлена!</strong><br><span data-i18n="step7_desc">Нажмите «Отправить» — бот сформирует...</span></p>
         </div>
 
       </div>
@@ -109,13 +113,13 @@
   <!-- УСЛОВИЯ ИСПОЛЬЗОВАНИЯ -->
   <section id="terms" class="legal">
     <div class="container">
-      <h2>Условия использования</h2>
+      <h2 data-i18n="terms_title">Условия использования</h2>
       <div class="collapsible">
-        <p>Начиная использование Сервиса, вы подтверждаете, что ознакомились с <a href="terms.docx" target="_blank">полным текстом</a> и принимаете его. <span class="toggle-text">Кратко: Сервис — только посредник. Не более 3 жалоб в сутки. Запрещены фейки. Мы не отвечаем за действия служб.</span></p>
-        <button class="toggle-btn">Читать полностью</button>
-        <div class="full-text">
-          <p><strong>1. Общие положения</strong><br>1.1. Настоящие Условия регулируют использование бота и сайта ParkingPatrol. 1.2. Используя Сервис, вы принимаете Условия в полном объёме...</p>
-          <p><a href="terms.docx" target="_blank">Скачать полный документ</a></p>
+        <p data-i18n="terms_short">Начиная использование Сервиса, вы подтверждаете, что ознакомились с <a data-i18n-href="terms_link" href="terms-ru.docx" target="_blank">полным текстом</a> и принимаете его. <span class="toggle-text">Кратко: Сервис — только посредник...</span></p>
+        <button class="toggle-btn" data-i18n="terms_btn">Читать полностью</button>
+        <div class="full-text" data-i18n="terms_full">
+          <p><strong>1. Общие положения</strong><br>1.1. Настоящие Условия регулируют использование бота и сайта ParkingPatrol...</p>
+          <p><a data-i18n-href="terms_link" href="terms-ru.docx" target="_blank">Скачать полный документ</a></p>
         </div>
       </div>
     </div>
@@ -124,35 +128,35 @@
   <!-- ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ -->
   <section id="privacy" class="legal">
     <div class="container">
-      <h2>Политика конфиденциальности</h2>
+      <h2 data-i18n="privacy_title">Политика конфиденциальности</h2>
       <div class="collapsible">
-        <p>Мы храним данные <strong>не более 30 дней</strong> и удаляем автоматически. <span class="toggle-text">Кратко: Фото + EXIF — только для жалобы. Контакты — по вашему выбору. Нет рекламы. Удалить: /delete.</span></p>
-        <button class="toggle-btn">Читать полностью</button>
-        <div class="full-text">
-          <p><strong>1. Общие положения</strong><br>1.1. Политика описывает, какие данные собирает Сервис... 1.2. Используя Сервис, вы соглашаетесь...</p>
-          <p><a href="privacy.docx" target="_blank">Скачать полный документ</a></p>
+        <p data-i18n="privacy_short">Мы храним данные <strong>не более 30 дней</strong> и удаляем автоматически. <span class="toggle-text">Кратко: Фото + EXIF — только для жалобы...</span></p>
+        <button class="toggle-btn" data-i18n="privacy_btn">Читать полностью</button>
+        <div class="full-text" data-i18n="privacy_full">
+          <p><strong>1. Общие положения</strong><br>1.1. Политика описывает, какие данные собирает Сервис...</p>
+          <p><a data-i18n-href="privacy_link" href="privacy-ru.docx" target="_blank">Скачать полный документ</a></p>
         </div>
       </div>
     </div>
   </section>
 
-    <!-- ОБРАТНАЯ СВЯЗЬ — НОВАЯ ФОРМА (email + телефон) -->
+  <!-- ОБРАТНАЯ СВЯЗЬ -->
   <section class="feedback">
     <div class="container">
-      <h2>Обратная связь</h2>
+      <h2 data-i18n="feedback_title">Обратная связь</h2>
       <form action="https://formspree.io/f/mdkynwwd" method="POST">
-        <input type="text" name="name" placeholder="Ваше имя" required>
-        <input type="tel" name="phone" placeholder="Телефон (Telegram)" required>
-        <input type="email" name="_replyto" placeholder="Email для ответа" required>
-        <textarea name="message" placeholder="Опишите проблему" required></textarea>
-        <button type="submit">Отправить</button>
+        <input type="text" name="name" placeholder="Ваше имя" data-i18n-ph="feedback_name" required>
+        <input type="tel" name="phone" placeholder="Телефон (Telegram)" data-i18n-ph="feedback_phone" required>
+        <input type="email" name="_replyto" placeholder="Email для ответа" data-i18n-ph="feedback_email" required>
+        <textarea name="message" placeholder="Опишите проблему" data-i18n-ph="feedback_message" required></textarea>
+        <button type="submit" data-i18n="feedback_submit">Отправить</button>
       </form>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>© 2025 ParkingPatrol | 
+      <p data-i18n="footer">© 2025 ParkingPatrol | 
         <a href="#terms">Условия</a> | 
         <a href="#privacy">Конфиденциальность</a> | 
         <a href="https://t.me/ParkingPatrolBot">Поддержка</a>
@@ -161,9 +165,10 @@
   </footer>
 
   <script>
+    // Переопределение copyLink с переводом
     function copyLink() {
       navigator.clipboard.writeText('https://t.me/ParkingPatrolBot');
-      alert('Ссылка скопирована!');
+      alert(translations[currentLang]?.copy_alert || 'Ссылка скопирована!');
     }
 
     // Раскрытие текста
@@ -171,7 +176,9 @@
       btn.addEventListener('click', () => {
         const full = btn.nextElementSibling;
         full.style.display = full.style.display === 'block' ? 'none' : 'block';
-        btn.textContent = full.style.display === 'block' ? 'Свернуть' : 'Читать полностью';
+        btn.textContent = full.style.display === 'block' 
+          ? (translations[currentLang]?.toggle_hide || 'Свернуть') 
+          : (translations[currentLang]?.toggle_show || 'Читать полностью');
       });
     });
 
