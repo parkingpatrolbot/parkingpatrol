@@ -3,7 +3,7 @@ const translations = {};
 
 async function loadLang(lang) {
   try {
-    const res = await fetch(`lang/${lang}.json`);
+    const res = await fetch(`lang/${lang}.json?v=3`);
     translations[lang] = await res.json();
     applyLang(lang);
     document.documentElement.lang = lang;
