@@ -31,7 +31,7 @@ function applyLang(lang) {
   });
 
   document.querySelectorAll('[data-img]').forEach(img => {
-    const src = img.dataset[`data-img-${lang}`] || img.dataset['data-img-ru'];
+    const src = img.getAttribute[`data-img-${lang}`] || img.getAttribute['data-img-ru'];
     if (src) img.src = src;
   });
 
